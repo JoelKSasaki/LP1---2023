@@ -1,0 +1,67 @@
+import java.util.Scanner;
+
+public class Worldhello {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Hello world");
+        System.out.println("Hello World");
+
+        int idade = 20;
+
+        System.out.println("idade: " + idade + " anos");
+
+        if (idade >= 18) {
+            System.out.println("maior de idade");
+        } else if (idade >= 12) {
+            System.out.println("adolescente");
+        } else {
+            System.out.println("menor de idade");
+        }
+
+
+    int opcao = 2;
+
+    switch(opcao)
+
+    {
+        case 1:
+            System.out.println("opção 1");
+            break;
+
+        case 2:
+            System.out.println("opção 2");
+            break;
+
+        default:
+            System.out.println("opção inválida");
+    }
+
+    int j = 0;
+    while(j<10){
+        System.out.println("contador: " + j);
+        j++;
+    }
+
+    for(int i = 0; i<10; i++){
+        System.out.println("número: " + i);
+    }
+    String[] nomes = {
+            "Rafael",
+            "Jossana",
+            "Marcelo"
+    };
+    System.out.println("Professor: " + nomes[0]);
+
+    for(String nome: nomes)
+        if(nome == "Rafael"){
+            System.out.println("Professor: " + nome);
+        }else{
+            System.out.println("Aluno(a): " + nome);
+        }
+
+    String texto = scanner.nextLine();
+        System.out.println("Você digitou " + texto);
+}
+}
+
