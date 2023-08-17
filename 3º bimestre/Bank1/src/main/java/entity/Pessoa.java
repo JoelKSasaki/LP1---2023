@@ -15,11 +15,23 @@ public class Pessoa {
     private String sobrenome;
     @Column
     private String email;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "endereco id")
+    private Endereco endereco;
 
-    public Pessoa(String nome, String sobrenome, String email){
+    public Pessoa(String nome, String sobrenome, String email, Endereco endereco){
         this.nome = nome;
         this.sobrenome = sobrenome;
         this.email = email;
+        this.endereco = endereco;
+    }
+
+    public Endereco getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
     }
 
     public int getId() {
