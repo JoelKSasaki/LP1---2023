@@ -16,7 +16,7 @@ public class Pessoa {
     @Column
     private String email;
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "endereco id")
+    @JoinColumn(name = "endereco_id")
     private Endereco endereco;
 
     public Pessoa(String nome, String sobrenome, String email, Endereco endereco){

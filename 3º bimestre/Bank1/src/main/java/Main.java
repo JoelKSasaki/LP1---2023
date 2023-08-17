@@ -39,7 +39,7 @@ public class Main {
 
         transaction.commit();
 
-        List<Endereco> enderecos = session.createQuery("from Endereço", Endereco.class).list();
+        List<Endereco> enderecos = session.createQuery("from Endereco", Endereco.class).list();
 
         enderecos.forEach(E -> System.out.println(E));
 
