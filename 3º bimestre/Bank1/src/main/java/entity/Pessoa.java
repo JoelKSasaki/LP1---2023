@@ -1,6 +1,9 @@
 package entity;
 
 import jakarta.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
+
 
 @Entity
 @Table(name = "pessoa")
@@ -9,15 +12,22 @@ public class Pessoa {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
     @Column
     private String nome;
+
     @Column
     private String sobrenome;
+
     @Column
     private String email;
+
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "endereco_id")
     private Endereco endereco;
+
+    @OneToMany
+    private List<Pedido> pedidos;
 
     public Pessoa(String nome, String sobrenome, String email, Endereco endereco){
         this.nome = nome;

@@ -9,14 +9,26 @@ import java.util.List;
 @Table
 
 public class Pedido {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column
     private int id;
-    @Column
+
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "pessoa_id")
     private Pessoa pessoa;
-    @Column
-    private ArrayList<Produto> produtos;
+
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "pedprod",
+            joinColumns = @JoinColumn(name = "pedido_id"),
+            inverseJoinColumns = @JoinColumn(name = "prod_id"))
+    private List<Produto> produtos;
+
+    public Pedido(Pessoa pessoa, List<Produto> produtos) {
+        this.pessoa = pessoa;
+        this.produtos = produtos;
+    }
 
     public int getId() {
         return id;
@@ -34,7 +46,7 @@ public class Pedido {
         this.pessoa = pessoa;
     }
 
-    public ArrayList<Produto> getProdutos() {
+    public List<Produto> getProdutos() {
         return produtos;
     }
 
