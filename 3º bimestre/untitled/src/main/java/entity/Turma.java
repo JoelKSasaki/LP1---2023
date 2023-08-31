@@ -21,9 +21,9 @@ public class Turma {
     @JoinColumn(name = "nomes")
     private List<Aluno> alunos;
 
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "prof_id")
-    private Prof prof;
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "turma_prof", joinColumns = @JoinColumn(name = "turma_id"), inverseJoinColumns = @JoinColumn(name = "prof_id"))
+    private List<Prof> prof;
 
     public Turma(String cod, int hora) {
         this.cod = cod;

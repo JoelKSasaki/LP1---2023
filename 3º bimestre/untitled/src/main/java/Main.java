@@ -26,14 +26,14 @@ public class Main {
         Session session = HibernateUtil.getSessionFactory().openSession();
         Transaction transaction = session.beginTransaction();
 
-        session.persist(n1);
-        session.persist(n2);
+        session.persist(t1);
+        session.persist(t2);
 
         transaction.commit();
 
-        List<Nota> notas = session.createQuery("from Nota", Nota.class).list();
-        for(int i = 0; i <notas.size(); i++){
-            System.out.println(notas.get(i));
+        List<Turma> turmas = session.createQuery("from turma", Turma.class).list();
+        for(int i = 0; i <turmas.size(); i++){
+            System.out.println(turmas.get(i));
         }
 
 

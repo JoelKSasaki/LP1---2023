@@ -32,9 +32,9 @@
             <version>6.3.0.CR1</version>
         </dependencies>
 
-        <mapping class="entity.Aluno"/>
-        <mapping class="entity.Prof"/>
-        <mapping class="entity.Nota"/>
-        <mapping class="entity.Turma"/>
+        <mapping class="entity.aluno"/>
+        <mapping class="entity.prof"/>
+        <mapping class="entity.boletim"/>
+        <mapping class="entity.turma"/>
     </session-factory>
 </hibernate-configuration>
